@@ -1,0 +1,52 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.1",
+    "parameters": {
+        "customerName": {
+            "type": "string",
+            "metadata": {
+                "description": "Basefarm customer name"
+            }
+        },
+        "location": {
+            "type": "string",
+            "defaultValue": "westeurope",
+            "allowedValues": [
+                "westeurope",
+                "northeurope"
+            ]
+        },
+        "resourceGroupNames": {
+            "type": "array",
+            "defaultValue": [
+                "db",
+                "vm",
+                "app"
+            ],
+            "metadata": {
+                "description": "Resource groups to be created"
+            }
+        }
+    },
+    "variables": {
+        "customerName": "[toLower(parameters('customerName'))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('location')]",
+            "name": "[concat(variables('customerName'),'-',parameters('resourceGroupNames')[copyIndex()])]",
+            "copy": {
+                "name": "addResourceGroups",
+                "count": "[length(parameters('resourceGroupNames'))]"
+            },
+            "tags": {
+                "Application": "Basefarm",
+                "Customer": "[variables('customerName')]",
+                "Environment": "Azure"
+            }
+        }
+    ],
+    "outputs": {}
+}
