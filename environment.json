@@ -19,9 +19,8 @@
         "resourceGroupNames": {
             "type": "array",
             "defaultValue": [
-                "db",
-                "vm",
-                "app"
+                "operations",
+                "networks"
             ],
             "metadata": {
                 "description": "Resource groups to be created"

@@ -1,0 +1,117 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westeurope"
+        },
+        "networkInterfaceName": {
+            "value": "vm-u-1258"
+        },
+        "networkSecurityGroupName": {
+            "value": "vm-u-1-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "frontend-subnet"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/60e04828-3e76-41b9-ba5b-1713a43f0c60/resourceGroups/test/providers/Microsoft.Network/virtualNetworks/skl-azure-vnet"
+        },
+        "publicIpAddressName": {
+            "value": "vm-u-1-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "vm-u-1"
+        },
+        "virtualMachineRG": {
+            "value": "test"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "dataDisks": {
+            "value": [
+                {
+                    "lun": 0,
+                    "createOption": "attach",
+                    "caching": "None",
+                    "writeAcceleratorEnabled": false,
+                    "id": null,
+                    "name": "vm-u-1_DataDisk_0",
+                    "storageAccountType": null,
+                    "diskSizeGB": null
+                }
+            ]
+        },
+        "dataDiskResources": {
+            "value": [
+                {
+                    "name": "vm-u-1_DataDisk_0",
+                    "sku": "Premium_LRS",
+                    "properties": {
+                        "diskSizeGB": 128,
+                        "creationData": {
+                            "createOption": "empty"
+                        }
+                    }
+                }
+            ]
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "adminUsername": {
+            "value": "yooakim"
+        },
+        "adminPublicKey": {
+            "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDsKyG4cOIrmvHCUkLF6p9iwXH4J6FeodTQzpKMVosV3UfbqWXzOTFwHH5K8tCjYHxYjqnPI+I1DVWP3EcnDprlQuGAXT9ektJCaU7E5w6pBiNCdqh5WMDdCAwUuElUPz6m1gRSC+1e6J89EmYPro4ZHa4R48yQnTawN/b6cxGzzMxAVhK0f16M+VkM0RH/weDmKdNT/pfG0B2npZxwJmIFiQwUJ8JNRuzhfEuDh69BnRB2WIu2LZDR7wlKDiAdGxrEufNKacN19tJpWXyU5dsHRf14opANvZiAIEW5NQJuurdRSIpKiTN6g/m0oL6CWDyzvPksHRMjBkRcGq6eKm3fc879u/U0JxSsJEHDW6pkxBjft2bk/StUsDEX8Ro2oweZZlqFKjTmQ5o1LErO7TDbcdx/JPlDQFl6Mf92ki8MpqKo1OTcZ4zdfn6HTVVXYnPzzPHedkR9UPwpABjdmSrjKCfQ4ZGJioFhkWPMlevnZ2Rx1vkz6/9wokE2AUGFIJXcYR1rHXUwesg0wDw21BwSV/RMXaPp4A5UkRGYdbU5uXSz1cflTGt9GWwrVwS5MP+LldgC2Z+NVSQyulA0qk8Nmr3nyGYyLc3ZlVmoJhmsPIa7qTOtibJvtdrR3jw2bjfFnmavkzn+OS+OMTPGOxtJqyhpLl88ZiZNSV3SGaqfiw== yooakim@gmail.com"
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "logsxzagpjqz7cl3w"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "/subscriptions/60e04828-3e76-41b9-ba5b-1713a43f0c60/resourceGroups/test/providers/Microsoft.Storage/storageAccounts/logsxzagpjqz7cl3w"
+        },
+        "autoShutdownStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownTime": {
+            "value": "19:00"
+        },
+        "autoShutdownTimeZone": {
+            "value": "UTC"
+        },
+        "autoShutdownNotificationStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownNotificationLocale": {
+            "value": "en"
+        },
+        "autoShutdownNotificationEmail": {
+            "value": "joakim@jwab.net"
+        }
+    }
+}
