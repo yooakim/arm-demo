@@ -1,8 +1,16 @@
 # Azure Resource Manager demos
 
-This repository contians some simple demos for showing how Azure Resource Manager templates can be used to automate.
+This repository contains [demos](./Demos.md) of various aspects of Azure and Azure Resource Manager templates.
 
-## Demos
 
-### Azure Pricing Calculator
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyooakim%2Farm-demo%2Fmaster%2F101-nic-publicip-dns-vnet%2Fenvironment.json" target="_blank">
+    <img src="http://azuredeploy.net/deploybutton.png"/>
+</a>
+<a href="https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyooakim%2Farm-demo%2Fmaster%2F101-nic-publicip-dns-vnet%2Fenvironment.json" target="_blank">
+    <img src="http://azuredeploy.net/AzureGov.png"/>
+</a>
+<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fyooakim%2Farm-demo%2Fmaster%2F101-nic-publicip-dns-vnet%2Fenvironment.json" target="_blank">
+    <img src="http://armviz.io/visualizebutton.png"/>
+</a>
 
+This template allows you to create a the Basefarm Recommended Resource Groups.
