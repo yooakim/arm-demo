@@ -4,34 +4,6 @@
     "parameters": {
         "customerName": {
             "value": "azure-vnet"
-        },
-        "storageAccounts": {
-            "value": [
-                {
-                    "lun": 0,
-                    "createOption": "attach",
-                    "caching": "None",
-                    "writeAcceleratorEnabled": false,
-                    "id": null,
-                    "name": "vm-u-1_DataDisk_0",
-                    "storageAccountType": null,
-                    "diskSizeGB": null
-                }
-            ]
-        },
-        "storageAccountResources": {
-            "value": [
-                {
-                    "name": "vm-u-1_DataDisk_0",
-                    "sku": "Premium_LRS",
-                    "properties": {
-                        "diskSizeGB": 128,
-                        "creationData": {
-                            "createOption": "empty"
-                        }
-                    }
-                }
-            ]
         }
     }
 }
